@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(149, 202, 233);
+    font-family: cursive;
+    user-select: none;
+}
+div{
+    padding: 25px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #b4e5e9;
+    font-size: 20px;
+}
+input{
+    height: 25px;
+}
+select{
+    width: 100px;
+    height: 25px;
+}
+button{
+    width: 140px;
+    height: 30px;
+}

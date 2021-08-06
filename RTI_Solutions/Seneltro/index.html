@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular conta de luz</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <form method="POST" action="./contaSeneltro.php">
+        <h1>Conta de luz</h1>
+        <label for="nome" >Nome completo:</label>
+        <input id="nome" name="nome" />
+
+        <label for="endereco">Endereço:</label>
+        <input id="endereco" name="endereco" placeholder="Rua e número"/>
+
+        <label for="consumo">Consumo em kWh</label>
+        <input id="consumo" name="consumo" placeholder="Quilowatts-hora" />
+
+        <button>Calcular</button>
+    </form>
+</body>
+</html>

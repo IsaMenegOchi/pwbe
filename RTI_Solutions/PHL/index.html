@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa PHL - Valor da viagem</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <form method="POST" action="./empresaPHL.php">
+        <h1>Valo da Viagem</h1>
+        <label for="cidadeOrigem">Cidade de origem:</label>
+        <input id="cidadeOrigem" name="cidadeOrigem" />
+
+        <label for="cidadeDestino">Cidade de destino:</label>
+        <input id="cidadeDestino" name="cidadeDestino"/>
+
+        <label for="distancia">Distância em KM:</label>
+        <input id="distancia" name="distancia"/>
+
+        <label for="pedagios">Quantidade de pedágios:</label>
+        <input id="pedagios" name="pedagios" type="number"/>
+
+        <button>Calcular</button>
+    </form>
+</body>
+</html>

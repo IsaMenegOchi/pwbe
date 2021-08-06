@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <form method="GET" action="action/teste.php">
+        <div><h1>Formulário</h1></div>
+        <div class="nome">
+            <label for="namel">Nome:</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        
+        <div class="sobrenome">
+            <label for="">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome">
+        </div>
+            
+        <div class="idade">
+            <label for="age">Idade:</label>
+            <input type="number" name="idade" id="idade">
+        </div>
+        
+        <div class="selecionar">
+            <label for="select">Linguagem Preferida:</label>
+            <select name="linguagem" id="linguagem">
+                <option value="nodeJS">NodeJS</option>
+                <option value="php">PHP</option>
+                <option value="java" selected>Java</option>
+                <option value="C#">C#</option>
+                <option value="ruby">Ruby</option>
+            </select>
+        </div>
+       <div>
+        <button>Enviar</button>
+       </div>
+    </form>
+</body>
+</html>
