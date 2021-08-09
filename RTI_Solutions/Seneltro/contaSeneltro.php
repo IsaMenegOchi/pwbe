@@ -19,7 +19,8 @@ if (
         $valorAPagar = $consumo * 0.32;
         $status = "baixo";
         echo "
-        <font size=30>Obrigado por economizar</font> <br> <br> <br> <br>";
+        Obrigada por economizar :)
+         <br> <br> <br> <br>";
     }
 
 }
@@ -39,10 +40,10 @@ else{
     <title>Resultado</title>
     <link href="styles.css" rel="stylesheet" />
 </head>
-<body class="corpo">
-    <h1 class="ampliar">Conta de luz de <?=$nome?> <br></h1>
-    <h2><?=$endereco?>. <br>
-        Consumo: <h2 class="<?= $status ?>"><?=$consumo?></h2> kWh.<br>
-        Valor a pagar: <h1 class="valor">R$ <?=number_format($valorAPagar, 2, "," , ".")?>.</h1></h2>
+<body>
+    <h1 class="titulo">Conta de luz de <?=$nome?> </h1> <br>
+    <h2 class="endereço"><?=$endereco?>. </h2> <br>
+    <h2 class="<?= $status ?>"> Consumo: <?=$consumo?> kWh.</h2> <br>
+    <h2 class="valor">Valor a pagar: <h1 class="valor">R$ <?=number_format($valorAPagar, 2, "," , ".")?>.</h1></h2>
 </body>
 </html>
