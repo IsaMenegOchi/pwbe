@@ -11,10 +11,15 @@ if (
     $pedagios = $_POST["pedagios"]*9.40;
 
     $valorDaViagem = $pedagios + $distancia;
+    
+    // $valorDaViagem = 0;
+    // $valorDaViagem = $distancia * 6;
+    //$valorDaViagem += pedagios * 9.4
 
 } else {
 
     echo "<h1>Você não enviou as informação corretamente</h1>";
+    die;
 }
 
 ?>

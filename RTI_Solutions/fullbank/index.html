@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <title>Fintech Fullbank</title>
+</head>
+<body>
+    <form method="POST" action="fullbank.php">
+
+        <h1>Fullbank</h1>
+
+        <label>Nome completo:</label>
+        <input type="text" name="nome" id="">
+
+        <label>Salário atual:</label>
+        <input type="number" name="salário" id="">
+
+        <label>Gênero:</label>
+        <div>
+            <span>
+                <input type="radio" name="genero" id="generoF" value="f">
+                <label for="generoF">F</label>
+            </span>
+                
+            <span>
+                <input type="radio" name="genero" id="generoM" value="m">
+                <label for="generoM">M</label>
+            </span>
+                
+            <span>
+                <input type="radio" name="genero" id="generoO" value="o">
+                <label for="generoO">Outro</label>
+            </span>
+
+        </div>
+        
+        <label>Cargo:</label>
+        <select name="cargo" id="selecaoDeCargo">
+
+            <option value="">RH</option>
+            <option value="">Financeiro</option>
+            <option value="">BD</option>
+            <option value="">Administração</option>
+            <option value="">Economista</option>
+            <option value="">TI</option>
+            <option value="">Marketing</option>
+            <option value="">Logística</option>
+
+        </select>
+
+        <button>Calcular</button>
+    </form>
+</body>
+</html>

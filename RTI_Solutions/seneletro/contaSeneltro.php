@@ -14,13 +14,12 @@ if (
     if ($consumo >= 120) {
         $valorAPagar = $consumo * 0.42;
         $status = "alto";
+        $agradecimento = "";
     }
     else{
         $valorAPagar = $consumo * 0.32;
         $status = "baixo";
-        echo "
-        Obrigada por economizar :)
-         <br> <br> <br> <br>";
+        $agradecimento = "Obrigada por economizar";
     }
 
 }
@@ -45,5 +44,6 @@ else{
     <h2 class="endereço"><?=$endereco?>. </h2> <br>
     <h2 class="<?= $status ?>"> Consumo: <?=$consumo?> kWh.</h2> <br>
     <h2 class="valor">Valor a pagar: <h1 class="valor">R$ <?=number_format($valorAPagar, 2, "," , ".")?>.</h1></h2>
+    <?= $agradecimento ?>
 </body>
 </html>
