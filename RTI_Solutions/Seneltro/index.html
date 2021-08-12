@@ -11,13 +11,13 @@
     <form method="POST" action="./contaSeneltro.php">
         <h1>Conta de luz</h1>
         <label for="nome" >Nome completo:</label>
-        <input id="nome" name="nome" />
+        <input id="nome" name="nome" required/>
 
         <label for="endereco">Endereço:</label>
-        <input id="endereco" name="endereco" placeholder="Rua e número"/>
+        <input id="endereco" name="endereco" placeholder="Rua e número" required/>
 
         <label for="consumo">Consumo em kWh</label>
-        <input id="consumo" name="consumo" placeholder="Quilowatts-hora" />
+        <input id="consumo" name="consumo" placeholder="Quilowatts-hora" required />
 
         <button>Calcular</button>
     </form>

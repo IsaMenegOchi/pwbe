@@ -11,16 +11,16 @@
     <form method="POST" action="./empresaPHL.php">
         <h1>Valor da Viagem</h1>
         <label for="cidadeOrigem">Cidade de origem:</label>
-        <input id="cidadeOrigem" name="cidadeOrigem" />
+        <input id="cidadeOrigem" name="cidadeOrigem" required/>
 
         <label for="cidadeDestino">Cidade de destino:</label>
-        <input id="cidadeDestino" name="cidadeDestino"/>
+        <input id="cidadeDestino" name="cidadeDestino" required/>
 
         <label for="distancia">Distância em KM:</label>
-        <input id="distancia" name="distancia"/>
+        <input id="distancia" name="distancia" required/>
 
         <label for="pedagios">Quantidade de pedágios:</label>
-        <input id="pedagios" name="pedagios" type="number"/>
+        <input id="pedagios" name="pedagios" type="number" required/>
 
         <button>Calcular</button>
     </form>
