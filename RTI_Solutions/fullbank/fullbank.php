@@ -11,7 +11,11 @@
         $cargo = $_POST["cargo"];
     
         $novoSalario = 0;
-     
+        
+        // $novoSalario = $salario > 5000 ? $salario * 1.1 : $salario * 1.2;
+        // forma reduzida de fazer uma condição
+        // 1.1 ou 1.2 = salario mais o acrescimo que foi proposto
+        // : = senão
 
         if ($salario <= 5000) {
             $novoSalario = $salario + ($salario * 20/100);
@@ -19,11 +23,16 @@
         else {
             $novoSalario = $salario + ($salario * 10/100);
         }
+
+    
     }
     else {
-        echo "Você não preencheu corretamente os campos";
+        die ("Você não preencheu corretamente os campos");
     }
 
+        // os tres iguais so existem em programações de liguagem fraca
+        // == testamos valores
+        //=== testamos valores e tipo da variavel
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -37,6 +46,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p><?="$nome passará a receber R$ $novoSalario, no cargo de $cargo" ?></p>
+    <p> <?= $genero === "m" ? "O" : "A" ; ($genero === "f" ? "A" : "") ?> 
+    <!-- podemos colocar o segundo ternario depois dos dois pontos -->
+    <!-- devemos sempre colocar o segundo ternario em parenteses () -->
+        <?="$nome passará a receber R$ " . number_format($novoSalario, 2, ',', '.') . ", no cargo de $cargo" ?></p>
 </body>
 </html>

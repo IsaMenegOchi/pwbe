@@ -22,6 +22,7 @@
 
         <label>Gênero:</label>
         <div>
+            <!-- precisamos sempre adcionar um value para que apareça na network no required  -->
             <span>
                 <input type="radio" name="genero" id="generoF" value="f" required>
                 <label for="generoF">F</label>
@@ -41,8 +42,11 @@
         
         <label>Cargo:</label>
         <select name="cargo" id="selecaoDeCargo" required>
-
-            <option value="RH" >RH</option>
+            
+            <option value="" >Selecione sua profissão</option>
+            <!-- o value="" deixa ser selecionado mas devolve algo vazio, assim o fomulartio pede para selecionar
+            Já com o disable ele não deixa se selcionado e pede para preencher o campo -->
+            <option value="RH">RH</option>
             <option value="Financeiro">Financeiro</option>
             <option value="BD">BD</option>
             <option value="Administração">Administração</option>
