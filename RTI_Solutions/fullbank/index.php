@@ -1,5 +1,37 @@
+<?php 
+
+    // declarando um vetor
+    $cargos = [
+        "Gerente de produtos",
+        "Gerente de projetos",
+        "Fesenvolvedor Front End",
+        "Desenvolvedor Back end",
+    ];
+    // $cargos = array(); - forma antiga
+
+    
+
+// adicionando um elemento no vetor
+    $cargos[] = "DevOps";
+    $cargos[] = "QA";
+    $cargos[] = "Analista de sistemas";
+
+    // podemos colocar um nome dentro do array $cargos["cargão"] = "devOps";
+    //a diferenlça entre colocar aq em cima, é que aq puxa do banco de dados
+
+
+// imprimindo um vetor
+
+    // print_r($cargos);
+    // die;
+
+    //excluindo um vetor
+    //unset($cargos[2]) - para excluir mais de um, devemmos criar um para cada
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,16 +76,30 @@
         <select name="cargo" id="selecaoDeCargo" required>
             
             <option value="" >Selecione sua profissão</option>
-            <!-- o value="" deixa ser selecionado mas devolve algo vazio, assim o fomulartio pede para selecionar
-            Já com o disable ele não deixa se selcionado e pede para preencher o campo -->
-            <option value="RH">RH</option>
+                <!-- o value="" deixa ser selecionado mas devolve algo vazio, assim o fomulartio pede para selecionar
+                Já com o disable ele não deixa se selcionado e pede para preencher o campo -->
+            <!-- <option value="RH">RH</option>
             <option value="Financeiro">Financeiro</option>
             <option value="BD">BD</option>
             <option value="Administração">Administração</option>
             <option value="Economista">Economista</option>
             <option value="TI">TI</option>
             <option value="Marketing">Marketing</option>
-            <option value="Logística">Logística</option>
+            <option value="Logística">Logística</option> -->
+
+            <?php
+            $tam = count($cargos);
+            $contador = 0;
+
+
+            while($contador < $tam){
+                echo "<option>" . $cargos[$contador] . "</option>";
+                $contador++;
+            }
+            // foreach($cargos as $cargo){ //colocamos o array como variavel
+            //     echo "<option>$cargo</option>";
+            // }
+            ?>
 
         </select>
 

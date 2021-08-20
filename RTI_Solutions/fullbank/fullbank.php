@@ -1,6 +1,9 @@
 <?php
 
 
+// todas as variaveis com $_ são predefinas, e tambem um array
+// $_SERVER - pegamos os dados do servidor
+
 
     if (isset($_POST["nome"]) && isset($_POST["salario"])
         && isset($_POST["genero"]) && isset($_POST["cargo"])){
