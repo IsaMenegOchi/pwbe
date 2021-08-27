@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#08090b;
+    color: #FFFFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+section {
+    max-width: 80%;
+    width: 50%;
+    padding: 20px;
+    background-color: #1b1e22;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #3d3e41;
+}
+
+h1{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+    border-collapse: collapse; 
+    /* separa as celulas */
+}
+
+table td, th{
+   padding: 10px;
+    border: 1px solid black;
+}
+table th{
+    background-color: #08090b;
+}
+
+.aprovado{
+    background-color: #00AA00;
+}
+.reprovado{
+    background-color: #AA0000;
+}
