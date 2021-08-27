@@ -47,19 +47,20 @@ $alunos = [
 
 
 
-function alterarNotaAluno(array $turma, $nome, $novaNota){
+function alterarNotaAluno(array &$turma, $nome, $novaNota){
     foreach ($turma as $chave=> $aluno){
         if($aluno["nome"] == $nome){
-            $alunos[$chave]["nota"] = $novaNota;
+            $turma[$chave]["nota"] = $novaNota;
+            // return;
         }
-
     }
 }
 
-alterarNotaAluno($alunos, )
+alterarNotaAluno($alunos,"Gustavo", 45);
+print_r($alunos);
 
 
-// Esceva uma função que inclua a situa~]ao de todos os alunos
+// Esceva uma função que inclua a situaçao de todos os alunos
 //caso a nota for menor que 50 situação = reprovado
 //caso a nota for maior ou igual a 50, situação = aprovado
 
