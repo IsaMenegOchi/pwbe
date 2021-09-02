@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "Maria",
+        "idade": 17,
+        "nota": 50,
+        "hobies": [
+            "jogar", "programar"
+        ]
+    },
+    {
+        "nome": "cintia",
+        "idade": 17,
+        "nota": 65,
+        "ativa": true
+    }
+]

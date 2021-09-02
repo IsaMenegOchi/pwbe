@@ -53,7 +53,7 @@ function alterarNotaAluno(array &$turma, $nome, $novaNota){
             $turma[$chave]["nota"] = $novaNota;
             // return;
         }
-    }
+    } 
 }
 
 alterarNotaAluno($alunos,"Gustavo", 45);

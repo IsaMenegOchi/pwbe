@@ -46,7 +46,19 @@ fecharNota($alunos);
             <td><?= $aluno["nome"]?></td>
             <td><?= $aluno["idade"]?></td>
             <td><?= $aluno["nota"]?></td>
-            <td><?= $aluno["situacao"]?></td>
+            <td class = "<?= strtolower($aluno['situacao'])?>"><?=$aluno["situacao"]?></td>
+            <!-- PROF - caso as clases no css seja aprov e reprov-->
+            <td class="<?= $aluno["situacao"] == "Aprovado" ? "aprov" : "reprov" ?>"><?=$aluno["situacao"]?></td>
+            <td class="
+            <?php
+            if ($aluno["situacao"] == "Aprovado"){
+                echo "aprov";
+            }
+            else{
+                echo "reprov";
+            }
+            ?>"> <?=$aluno["situacao"]?></td>
+
         </tr>   
         <?php 
         }
