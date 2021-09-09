@@ -18,7 +18,7 @@ if(isset($_GET["novaNota"])){
     $nota = $_GET["novaNota"];
     $nome = $_GET["nomeAluno"];
 
-    // alterarNota($alunos, $nome, $nota);
+    alterarNotaAluno($alunos, $nome, $nota);
 }
 
 

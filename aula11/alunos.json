@@ -1,0 +1,40 @@
+[
+    {
+    "nome": "Maria",
+    "idade": 17,
+    "nota": 50,
+    "hobies": [
+        "jogar", "programar"
+    ]
+},
+{
+    "nome": "Cintia",
+    "idade": 17,
+    "nota": 64,
+    "ativa": true
+},
+{
+    "nome": "Cristiano",
+    "idade": 21,
+    "nota": 66,
+    "ativa": true
+},
+{
+    "nome": "Matheus",
+    "idade": 17,
+    "nota": 50,
+    "ativa": true
+},
+{
+    "nome": "Gabriel",
+    "idade": 16,
+    "nota": 65,
+    "ativa": true
+},
+{
+    "nome": "Ariely",
+    "idade": 19,
+    "nota": 64,
+    "ativa": true
+}
+]
