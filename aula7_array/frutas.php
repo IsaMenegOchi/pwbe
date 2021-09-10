@@ -1,21 +1,21 @@
 <?php
 
 //declaramos um vetor
-$frutas = [
-    "0" =>"Maça", //colocamos manualmente a chave dessa fruta/posição
+$frutas = [ 
+    "Maça", //colocamos manualmente a chave dessa fruta/posição
     "Tomate",
+    "Melancia",
+    "Morango",
     "Pera",
     "Banana",
     "Laranja",
     "Abacaxi",
-    "Melancia",
-    "Morango",
     "Kiwi",
-    "Pessego",
+    "Pessego"   
 ];
 
 
-$frutaAEncontrar = "Pera";
+$frutaAEncontrar = "Tomate";
 $encontrei = false;
 
 //faço com que ele rode/percorra todo o array, além de pegar a chave de cada elemento
