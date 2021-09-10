@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #f7e4ff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    height: 10%h;
+}
+h1{
+    font-size: 40px;
+}
+section
+{
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+input, button
+{
+    font-family: sans-serif;
+    padding: 1px;
+    font-size: 20px;
+    height: 30px;
+}
+
+#containerAcoes{
+    min-width: 77.5vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+    background-color: #f2beff;
+    border-radius: 5px;
+}
+
+#buscarFunc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#buscarFuncionario{
+    width: 65vw;
+}
+
+table
+{
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+    border-collapse: collapse;
+    box-shadow: -2px -2px 7px #2e003a;
+
+}
+
+table tr:hover
+{
+    cursor: pointer;
+    background-color: #250531CC;
+    color: white;
+}
+
+/* linhas impares */
+tr:nth-child(even){
+    background: #FFF
+}
+
+/* linhas pares */
+tr:nth-child(odd){
+    background: #f2beff
+}
+
+table td:hover
+{
+    cursor: pointer;
+    background-color: #2b1538;
+    border-collapse: collapse;
+}
+h1
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+table th
+{
+    color: white;
+    background-color:#760094;
+}
+
+table td, th
+{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-form-cadastro{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background-color: #FFFFFF99;
+    
+}
+
+.container-form-cadastro form{
+    height: 100%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-color: #7c0e97ef;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div{
+    gap: 10px;
+}
+
