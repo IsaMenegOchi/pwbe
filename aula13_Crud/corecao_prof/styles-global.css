@@ -125,3 +125,13 @@ h1 em {
   background-color: darkgray;
   box-shadow: 0px 0px 20px #000;
 }
+
+.container-form{
+  width: 100vw;
+  height: 100vh;
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

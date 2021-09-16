@@ -111,7 +111,7 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
             <?= $funcionario->department ?>
           </td>
           <td>
-            <button class="material-icons">edit</button>
+            <button onclick="editar(<?= $funcionario->id ?>)" class="material-icons">edit</button>
             <button onclick="deletar(<?= $funcionario->id ?>)" class="material-icons">delete</button>
           </td>
         </tr>
