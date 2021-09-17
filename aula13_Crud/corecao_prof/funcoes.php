@@ -69,3 +69,21 @@ function buscarFuncionarioPorId ($nomeArquivo, $idFuncionario){
     }
     return false;
 }
+
+function editarFuncionario ($nomeArquivo, $funcionarioEditado){
+
+    // var_dump($funcionarioEditado);exit;
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    //percorre os funcionários e apaga o id procurado
+    foreach($funcionarios as $chave => $funcionario){
+        if($funcionario->id == $funcionarioEditado["id"]){
+           $funcionarios[$chave] = $funcionarioEditado;
+        }
+    }
+
+    $json = json_encode(array_values($funcionarios));
+
+    file_put_contents($nomeArquivo, $json);
+}
