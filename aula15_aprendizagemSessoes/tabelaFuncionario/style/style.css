@@ -132,18 +132,28 @@ table td, th
 }
 
 .container-form-cadastro form{
-    height: 100%;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    height: 70%;
+    width: 20vw;
+    margin: 40px;
+    gap: 20px;
     background-color: #7c0e97ef;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
 
-div{
-    gap: 10px;
+.container-form-cadastro form div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+   font-size: 16px;
+   color: white;
+   gap: 5px;
+
 }
+
 

@@ -28,12 +28,12 @@ function realizarLogin($usuario, $senha, $dados){
             $_SESSION["id"] = session_id();
             $_SESSION["data_hora"] = date('d/m/Y - h:i:s');
 
-            header("location: ../meu_projeto/index.php");
+            header("location: ../tabelaFuncionario/index.php");
             exit;
         }
     }
 
-        header("location: index.php");
+        header("location: ../index.php");
 }
 
 
@@ -43,7 +43,7 @@ function realizarLogin($usuario, $senha, $dados){
 
     function verificarLogin(){
         if($_SESSION['id'] != session_id() || (empty($_SESSION['id']))){
-            header("location: ../logins/index.php");
+            header("location: ../index.php");
         }
     }
 
@@ -55,5 +55,5 @@ function realizarLogin($usuario, $senha, $dados){
         //? Destroi a sessão ativa
         session_destroy();
 
-        header("location: ./index.php");
+        header("location: ../index.php");
     }

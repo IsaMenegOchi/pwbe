@@ -114,14 +114,39 @@ verificarLogin();
     </section>
     <div class="container-form-cadastro">
         <form method="POST" action="acoes.php">
-            <input type="number" name="idFuncionario"  id="idFuncionario" placeholder="digite o id">
-            <input type="text" name="nomeFuncionario" id="nomeFuncionario" placeholder="digite o nome">
-            <input type="text" name="sobrenomeFuncionario" id="sobrenomeFuncionario" placeholder="digite o sobrenome">
-            <input type="text" name="emailFuncionario"  id="emailFuncionario" placeholder="digite e-mail">
-            <input type="text" name="generoFuncionario" id="generoFuncionario" placeholder="digite o genero">
-            <input type="text" name="enderecoIpFuncionario"  id="enderecoIpFuncionario" placeholder="digite o endereço IP">
-            <input type="text" name="paisFuncionario" id="paisFuncionario" placeholder="digite o país">
-            <input type="text" name="departamentoFuncionario" id="departamentoFuncionario" placeholder="digite o departamento">
+            <div>
+                <label for="">Digite o Id Do funcionário</label>
+                <input type="number" name="idFuncionario"  id="idFuncionario" placeholder="id">
+            </div>
+            <div>
+                <label for="">Digite o Nome do funcionário</label>
+                <input type="text" name="nomeFuncionario" id="nomeFuncionario" placeholder="nome">
+            </div>
+            <div>
+                <label for="">Digite sobrenome do funcionário</label>
+                <input type="text" name="sobrenomeFuncionario" id="sobrenomeFuncionario" placeholder="sobrenome">
+            </div>
+            <div>
+                <label for="">Digite o e-mail do funcionário</label>
+                <input type="text" name="emailFuncionario"  id="emailFuncionario" placeholder="e-mail">
+            </div>
+            <div>
+                <label for="">Digite o gênero do funcionário</label>
+                <input type="text" name="generoFuncionario" id="generoFuncionario" placeholder="gênero">
+            </div>
+            <div>
+                <label for="">Digite o endereço IP do funcionário</label>
+                <input type="text" name="enderecoIpFuncionario"  id="enderecoIpFuncionario" placeholder="endereço IP">
+            </div>
+            <div>
+                <label for="">Digite o país do funcionário</label>
+                <input type="text" name="paisFuncionario" id="paisFuncionario" placeholder="digite o país">
+            </div>
+            <div>
+                <label for="">Digite o departamento do funcionário</label>
+                <input type="text" name="departamentoFuncionario" id="departamentoFuncionario" placeholder="departamento">
+            </div>
+
             <button>Cadastrar</button>
         </form>
     </div>
