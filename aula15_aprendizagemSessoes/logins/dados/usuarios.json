@@ -10,5 +10,13 @@
     {
         "usuario": "joao",
         "senha": "789012"
+    },
+    {
+        "usuario":"isabelle",
+        "senha":"654987"
+    },
+    {
+        "usuario":"pedro",
+        "senha":"852456"
     }
 ]

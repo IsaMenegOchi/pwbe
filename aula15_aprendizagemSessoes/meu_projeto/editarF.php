@@ -1,14 +1,14 @@
 <?php
 
-    require ("./funcoes.php");
-    $funcionarioId = $_GET['id'];
+require ("./funcoes.php");
+$funcionarioId = $_GET['id'];
 
-    $funcionario = buscarFuncionarioPorId("./dados/empresaX.json", $funcionarioId);
+$funcionario = buscarFuncionarioPorId("./dados/empresaX.json", $funcionarioId);
 
 //a tag Pre identa/formata o var_dump no navegador
-    // echo '<pre>';
-    // var_dump($funcionario);
-    // echo '</pre>';exit;
+// echo '<pre>';
+// var_dump($funcionario);
+// echo '</pre>';exit;
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./styles-global.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <script src="./script.js" defer></script>
+    <script src="./script/script.js" defer></script>
     <title>Empresa X</title>
 </head>
 

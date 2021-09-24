@@ -1,6 +1,6 @@
 <?php
 
-require_once("funcoes.php");
+require_once("funcoesSessao.php");
 
 
 session_start();
