@@ -45,7 +45,7 @@ function realizarLogin($usuario, $senha, $dados){
 
     function verificarLogin(){
         if($_SESSION['id'] != session_id() || (empty($_SESSION['id']))){
-            header("location: index.php");
+            header("location: ./index.php");
         }
     }
 
@@ -57,5 +57,5 @@ function realizarLogin($usuario, $senha, $dados){
         //? Destroi a sessão ativa
         session_destroy();
 
-        header("location: index.php");
+        header("location: ./index.php");
     }

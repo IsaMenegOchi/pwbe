@@ -10,7 +10,7 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
 
 ?>
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
