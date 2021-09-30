@@ -1,3 +1,12 @@
+<?php
+    require_once("../database/conexao.php");
+
+    //*seleciona tudo de...
+    $sql = "SELECT * FROM tbl_categoria";
+
+    $resultado = mysqli_query($conecao, $sql);
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,6 +42,13 @@
                 </form>
                 <h1>Lista de Categorias</h1>
 
+                <?php
+                
+                //tem acesso as linhas
+                while($categoria = mysqli_fetch_array($resultado)){
+                    echo $categoria["descricao"];
+                }
+                ?>
                     <div class="card-categorias">
                         <img onclick="deletar()" src="https://icons.veryicon.com/png/o/construction-tools/coca-design/delete-189.png" />
                     </div>
