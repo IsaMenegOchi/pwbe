@@ -17,9 +17,9 @@ const PASSAWORD = "bcd127";
 const DATABASE = "icatalogo";
 
 //ela se conecta ao banco de dados 
-$conecao = mysqli_connect(HOST, USER, PASSAWORD, DATABASE);
+$conexao = mysqli_connect(HOST, USER, PASSAWORD, DATABASE);
 
-if ($conecao === false) {
+if ($conexao === false) {
     die(mysqli_connect_error());
 
 }
