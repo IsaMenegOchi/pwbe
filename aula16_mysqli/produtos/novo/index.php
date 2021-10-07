@@ -1,3 +1,17 @@
+<?php
+
+
+//Conexão com o banco 
+require_once("../../database/conexao.php");
+
+//Query sql - O que vamos escrever na tabela
+$sql = "SELECT * FROM tbl_categoria";
+
+//Executar a uery sql na base de dados
+$resultado = mysqli_query($conexao, $sql)
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,7 +33,9 @@
 
       <main>
 
-        <form class="form-produto" method="POST" action="../acoes.php" enctype="multipart/form-data">
+      <!-- enctype = apenas utilizado com o metodo post/necessario para fazer o upload de arquivos em formularios -->
+        <form class="form-produto" method="POST" action="../acoes.php" enctype="multipart/form-data"> 
+
 
           <input type="hidden" name="acao" value="inserir" />
 
@@ -70,7 +86,16 @@
             <select id="categoria" name="categoria" required>
               <option value="">SELECIONE</option>
               
-                <option value=""></option>
+              <!-- LISTAGEM DE CATEGORIAS VINDAS DO BANCO -->
+
+              <?php 
+              
+                //resultado possui todos os dados da tabela categoria, e o fetch array faz com que essa tabela o tranforme em array
+                while ($categoria = mysqli_fetch_array($resultado)){
+              ?>
+                <option value="<?= $categoria["id"]?>"> <?= ucfirst($categoria["descricao"])?></option>
+
+            <?php } ?>
               
             </select>
 
