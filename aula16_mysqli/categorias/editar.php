@@ -1,12 +1,18 @@
 <?php
 
+    //começamos a sessão para podermos levar uma variavel a outra pagina
     session_start();
+
+    //pegamos em database o arquivo de coneção para pegarmos a coneção com o banco
     require_once("../database/conexao.php");
 
+    //criamos uma vriavel que mostra na url qual id selecionamos para editar
     $idCategoria = $_GET['id'];
 
+    // criamos uma variavel que vai escrrver no banco  
     $sql = "SELECT * FROM tbl_categoria WHERE id = $idCategoria";
 
+    //
     $resultado = mysqli_query($conexao, $sql);
 
     $categoria = mysqli_fetch_array($resultado);
@@ -34,6 +40,7 @@
             <main>
                 <form class="form-categoria" method="POST" action="./acoes.php">
                     <input type="hidden" name="acao" value="editar" />
+                    <input type="hidden" name="id" value="<?= $categoria["id"] ?>" />
                     <h1 class="span2">Edição Categorias</h1>
 
                     <ul>
@@ -45,6 +52,9 @@
                         <li><?php echo $erro?></li>  
                     <?php
                             }//fim do foreach
+
+                        session_unset();
+
                         session_destroy();
                         }//fim do if
                     
@@ -52,7 +62,7 @@
                     </ul>
                     <div class="input-group span2">
                         <label for="descricao">Descrição</label>
-                        <input type="text" name="descricao" id="descricao" value="<?php $categoria["descricao"] ?>"/>
+                        <input type="text" name="descricao" id="descricao" value="<?= $categoria["descricao"] ?>"/>
                     </div>
                     <button type="button" onclick="javascript:window.location.href = '../produtos/'">Cancelar</button>
                     <button>Editar</button>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//CONEXÃO COM BANCO DE DADOS
+//*CONEXÃO COM BANCO DE DADOS
 require_once("../database/conexao.php");
 
 //*FUNÇÃO DE VALIDAÇÃO
@@ -69,6 +69,19 @@ switch ($_POST["acao"]) {
 
         header("location: index.php");
 
+    break;
+
+    case "editar":
+
+        $id = $_POST["id"];
+        $descricao = $_POST["descricao"];
+
+        $sql = "UPDATE tbl_categoria SET descricao = '$descricao'  WHERE id = $id"; //sempre deixar com aspas simples no sql
+        
+        $resultado = mysqli_query($conexao, $sql);
+        
+        header("location: index.php");
+    
     break;
 
 

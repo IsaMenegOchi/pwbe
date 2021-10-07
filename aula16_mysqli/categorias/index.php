@@ -66,10 +66,12 @@
                             //guarda uma categoria por vez
                             echo  ucfirst($categoria["descricao"]);
                         ?>
-                       
+                        <div class="imagens">
                             <img onclick="deletar(<?php echo $categoria['id']?>)" src="https://icons.veryicon.com/png/o/construction-tools/coca-design/delete-189.png" />
                             <img onclick="javascript: window.location = 'editar.php?id=<?php echo $categoria['id'] ?>'" src="https://icons.veryicon.com/png/o/leisure/weight-with-linear-icon/edit-65.png" />
                         
+                        </div>
+                            
                     </div>
 
                 <?php

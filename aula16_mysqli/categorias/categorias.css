@@ -38,13 +38,14 @@
   border-radius: 6px;
 }
 
-.card-categorias > img {
+
+.imagens > img {
   width: 20px;
 
   cursor: pointer;
   transition: 0.2s;
 }
 
-.card-categorias > img:hover {
+.imagens > img:hover {
   transform: scale(1.1);
 }
