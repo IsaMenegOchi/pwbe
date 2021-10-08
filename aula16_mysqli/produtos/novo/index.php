@@ -93,7 +93,7 @@ $resultado = mysqli_query($conexao, $sql)
                 //resultado possui todos os dados da tabela categoria, e o fetch array faz com que essa tabela o tranforme em array
                 while ($categoria = mysqli_fetch_array($resultado)){
               ?>
-                <option value="<?= $categoria["id"]?>"> <?= ucfirst($categoria["descricao"])?></option>
+                <option value="<?= $categoria['id']?>"> <?= ucfirst($categoria["descricao"])?></option>
 
             <?php } ?>
               
