@@ -1,3 +1,15 @@
+<?php
+
+    require_once("../database/conexao.php");
+
+    $sql = "SELECT p.*, c.descricao FROM tbl_produto p INNER JOIN tbl_categoria c ON p.categoria_id = c.id";
+
+    $resultado = mysqli_query($conexao, $sql);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,6 +44,29 @@
 
                 <!-- LISTAGEM DE PRODUTOS (INICIO) -->
 
+                <?php 
+                
+                while ($produto = mysqli_fetch_array($resultado)){
+                  
+                    $valor = $produto["valor"];
+                    $desconto = $produto["desconto"];
+
+                    $valorDesconto = 0;
+
+                    if($desconto > 0){
+                        $valorDesconto = $valor * ($desconto/100);
+                    }
+
+                    $qtdParcelas = $valor > 1000 ? 12 : 6; 
+
+                    $valorDoProduto = $valor - $valorDesconto;
+
+                    //$valor = $valor - $valorDesconto
+                    //$valor -= $valorDesconto
+
+                    $valorParcela = $valorDoProduto / $qtdParcelas;
+                
+                ?>
                 <article class="card-produto">
 
                        <div class="acoes-produtos">
@@ -39,32 +74,37 @@
                     <img onclick="deletar(<?= $produto['id'] ?>)" src="../imgs/trash.svg" />
                     </div>
     
-                <figure>
-                     <img src="" />
-                </figure>
+                    <figure>
+                        <img src="fotos/<?= $produto["imagem"]?>" />
+                    </figure>
 
-                <section>
+                    <section>
 
-                    <span class="preco">
-                        R$ 
-                        <em>% off</em>
-                    </span>
+                        <span class="preco">
+                            R$ <?= number_format($valorDoProduto, 2, ",", ".")?>
+                            <em><?= $produto["desconto"]?>% off</em>
+                        </span>
 
-                    <span class="parcelamento">ou em
-                        <em>
-                        x R$ sem juros
-                        </em>
-                    </span>
+                        <span class="parcelamento">ou em
+                            <em>
+                            <?= $qtdParcelas?>x de R$ <?=number_format($valorParcela, 2, ",", ".")?> sem juros
+                            </em>
+                        </span>
 
-                    <span class="descricao"></span>
+                        <span class="descricao"><?= $produto["1"]?></span>
 
-                    <span class="categoria">
-                        <em></em>
-                     </span>
+                        <span class="categoria">
+                            <em><?= $produto["descricao"]?></em>
+                        </span>
 
+                    </section>
                 </article>
 
-                </section>
+                <?php 
+                }
+                ?>
+                  
+            
 
                 <!-- LISTAGEM DE PRODUTOS (FIM) -->
 

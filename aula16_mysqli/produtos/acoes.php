@@ -54,7 +54,7 @@ switch ($_POST["acao"]) {
 
             $resultadoInsercao = mysqli_query($conexao, $instrucaoSqlInsercao);
 
-            header("location: index.php");
+            header("location: ../index.php");
 
     break;
 
