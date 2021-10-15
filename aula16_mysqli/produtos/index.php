@@ -1,11 +1,11 @@
 <?php
 
+
     require_once("../database/conexao.php");
 
     $sql = "SELECT p.*, c.descricao FROM tbl_produto p INNER JOIN tbl_categoria c ON p.categoria_id = c.id";
 
     $resultado = mysqli_query($conexao, $sql);
-
 
 ?>
 
