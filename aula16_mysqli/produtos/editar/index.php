@@ -63,7 +63,7 @@
 
           <div class="input-group">
             <label for="peso">Peso</label>
-            <input type="text" name="peso" value="<?= $produto['peso']?>" id="peso" required>
+            <input type="text" name="peso" value="<?= number_format($produto['peso'], 2, ",", ".")?>" id="peso" required>
           </div>
 
           <div class="input-group">
@@ -83,7 +83,7 @@
 
           <div class="input-group">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" value="<?= $produto['valor']?>" id="valor" required>
+            <input type="text" name="valor" value="<?= number_format($produto['valor'], 2, ",", ".")?>" id="valor" required>
           </div>
 
           <div class="input-group">

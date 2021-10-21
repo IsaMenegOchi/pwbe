@@ -201,13 +201,26 @@ switch ($_POST["acao"]) {
     case 'editar':
 
         $id = $_POST["produtoId"];
+
+        if ($_FILES["foto"]["error"] != UPLOAD_ERR_NO_FILE) {
+            $sqlImagem = "SELECT imagem FROM tbl_produto WHERE id = $id";
+
+            $resultado = mysqli_query($conexao, $sqlImagem);
+            $produto = mysqli_fetch_array($resultado);
+            
+        }
         
         $descricao = $_POST["descricao"];
-        $peso = $_POST["peso"];
+        $peso = str_replace(".", "", $_POST["peso"]);
+        $peso = str_replace(".", "", $peso);
+
+        $valor = str_replace(".", "", $_POST["valor"]);
+        $valor = str_replace(",", ".", $valor);
+
         $quantidade = $_POST["quantidade"];
         $cor = $_POST["cor"];
         $tamanho = $_POST["tamanho"];
-        $valor = $_POST["valor"];
+        
         $desconto = $_POST["desconto"];
         $categoriaId = $_POST["categoria"];
 
