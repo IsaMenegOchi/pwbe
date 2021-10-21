@@ -80,6 +80,10 @@ switch ($_POST["acao"]) {
         
         $resultado = mysqli_query($conexao, $sql);
         
+        echo "<pre>";
+        var_dump($sql);
+        echo "</pre>"; exit;
+        
         header("location: index.php");
     
     break;

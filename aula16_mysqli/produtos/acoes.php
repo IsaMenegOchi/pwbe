@@ -200,7 +200,32 @@ switch ($_POST["acao"]) {
 
     case 'editar':
 
+        $id = $_POST["produtoId"];
+        
+        $descricao = $_POST["descricao"];
+        $peso = $_POST["peso"];
+        $quantidade = $_POST["quantidade"];
+        $cor = $_POST["cor"];
+        $tamanho = $_POST["tamanho"];
+        $valor = $_POST["valor"];
+        $desconto = $_POST["desconto"];
+        $categoriaId = $_POST["categoria"];
 
+        $sql = "UPDATE tbl_produto SET descricao = '$descricao', peso = '$peso', quantidade = '$quantidade',
+        cor = '$cor', tamanho = '$tamanho', valor = '$valor', desconto = '$desconto', categoria_id = '$categoriaId'
+        WHERE id = $id"; //sempre deixar com aspas simples no sql
+        
+        
+        $resultado = mysqli_query($conexao, $sql);
+        // echo "<pre>";
+        // var_dump($sql);
+        // echo "</pre>"; exit;
+
+        header("location: ../");
+
+    break;
+
+        
 
     default:
          # code...
