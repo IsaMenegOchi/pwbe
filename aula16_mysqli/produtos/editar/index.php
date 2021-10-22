@@ -1,11 +1,13 @@
 <?php
 
+session_start();
+
 //Pegamos a conexão com o banco
   require_once("../../database/conexao.php");
 
   $idProduto = $_GET['id'];
 //fazemos um comando para o banco
-  $sqlProduto = "SELECT * FROM tbl_produto";
+  $sqlProduto = "SELECT * FROM tbl_produto WHERE id = $idProduto";
 //mandamos para essa ação apra que ela escreva o comando
   $resultadoProduto = mysqli_query($conexao, $sqlProduto);
 
@@ -45,6 +47,17 @@
           <h1>Editar Produto</h1>
           
           <ul>
+
+          <?php
+            if (isset($_SESSION["erros"])) {
+              
+              foreach ($_SESSION["erros"] as $erros) {
+                echo "<li> $erros </li>";
+              }
+              unset($_SESSION["erros"]);
+        
+            }
+            ?>
       
           </ul>
           <?php 
@@ -58,22 +71,22 @@
 
           <div class="input-group span2">
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" value="<?= $produto['descricao']?>" id="descricao" required>
+            <input type="text" name="descricao" value="<?= $produto['descricao']?>" id="descricao">
           </div>
 
           <div class="input-group">
             <label for="peso">Peso</label>
-            <input type="text" name="peso" value="<?= number_format($produto['peso'], 2, ",", ".")?>" id="peso" required>
+            <input type="text" name="peso" value="<?= number_format($produto['peso'], 2, ",", ".")?>" id="peso">
           </div>
 
           <div class="input-group">
             <label for="quantidade">Quantidade</label>
-            <input type="text" name="quantidade" value="<?= $produto['quantidade']?>" id="quantidade" required>
+            <input type="text" name="quantidade" value="<?= $produto['quantidade']?>" id="quantidade">
           </div>
 
           <div class="input-group">
             <label for="cor">Cor</label>
-            <input type="text" name="cor" value="<?= $produto['cor']?>" id="cor" required>
+            <input type="text" name="cor" value="<?= $produto['cor']?>" id="cor">
           </div>
 
           <div class="input-group">
@@ -83,7 +96,7 @@
 
           <div class="input-group">
             <label for="valor">Valor</label>
-            <input type="text" name="valor" value="<?= number_format($produto['valor'], 2, ",", ".")?>" id="valor" required>
+            <input type="text" name="valor" value="<?= number_format($produto['valor'], 2, ",", ".")?>" id="valor">
           </div>
 
           <div class="input-group">
@@ -95,7 +108,7 @@
 
             <label for="categoria">Categoria</label>
 
-            <select id="categoria" name="categoria" required>
+            <select id="categoria" name="categoria">
 
             <?php 
               //resultado possui todos os dados da tabela categoria, e o fetch array faz com que essa tabela o tranforme em array

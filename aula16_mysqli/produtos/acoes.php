@@ -36,7 +36,7 @@ function validarCampos(){
             $erros[] = "O campo quantidade deve ser um número";  
         }
     
-    //*VALIDAÃO DE COR
+    //*VALIDAçÃO DE COR
         if(!isset($_POST["cor"]) || $_POST["cor"] == ""){
 
             $erros[] = "O campo cor é obrigatório";
@@ -108,15 +108,15 @@ switch ($_POST["acao"]) {
         // echo '</pre>';
         // exit;
 
-        foreach ($_POST as $key => $value) {
+        // foreach ($_POST as $key => $value) {
             
-            echo "INDICE-> " . $key . ' VALR-> ' . $value . '<br>'; 
+        //     echo "INDICE-> " . $key . ' VALR-> ' . $value . '<br>'; 
 
-            if ($_POST["$key"] == "" || !isset($_POST["$key"])) {
+        //     if ($_POST["$key"] == "" || !isset($_POST["$key"])) {
                 
-            }
+        //     }
 
-        }
+        // }
 
         $erros = validarCampos();
 
@@ -201,6 +201,16 @@ switch ($_POST["acao"]) {
     case 'editar':
 
         $id = $_POST["produtoId"];
+        
+        $erros = validarCampos();
+
+        if (count($erros) > 0) {
+           $_SESSION["erros"] = $erros;
+
+           header("location: editar/index.php?id=$id");
+           exit;
+        }
+
 
         if ($_FILES["foto"]["error"] != UPLOAD_ERR_NO_FILE) {
             $sqlImagem = "SELECT imagem FROM tbl_produto WHERE id = $id";
@@ -208,11 +218,35 @@ switch ($_POST["acao"]) {
             $resultado = mysqli_query($conexao, $sqlImagem);
             $produto = mysqli_fetch_array($resultado);
             
+            // echo $_FILES["foto"]["name"];
+            // echo "<br/>";
+            // echo '/fotos/' . $produto["imagem"]; exit;
+            // echo "<br/>";
+
+            //Exclui a foto antiga
+            unlink("./fotos/" . $produto["imagem"]);
+
+            //Recupera o nome original do da imagem e armazena na variavel
+            $nomeDoArquivo = $_FILES["foto"]["name"];
+
+            //Extrai a extensão do arquivo de imagem
+            $extensao = pathinfo($nomeDoArquivo, PATHINFO_EXTENSION);
+
+            //Define um nome aleatorio para a imagem que será armazenada na pasta "fotos"
+            $novoNomeArquivo = md5(microtime($nomeDoArquivo)) . ".$extensao";
+
+           $teste = move_uploaded_file($_FILES["foto"]["tmp_name"], "fotos/$novoNomeArquivo");
+// 
+            // echo "<pre>";
+            // var_dump($teste);
+            // echo "<pre/>";
+            // exit;
         }
         
         $descricao = $_POST["descricao"];
+
         $peso = str_replace(".", "", $_POST["peso"]);
-        $peso = str_replace(".", "", $peso);
+        $peso = str_replace(",", ".", $peso);
 
         $valor = str_replace(".", "", $_POST["valor"]);
         $valor = str_replace(",", ".", $valor);
@@ -224,15 +258,20 @@ switch ($_POST["acao"]) {
         $desconto = $_POST["desconto"];
         $categoriaId = $_POST["categoria"];
 
-        $sql = "UPDATE tbl_produto SET descricao = '$descricao', peso = '$peso', quantidade = '$quantidade',
-        cor = '$cor', tamanho = '$tamanho', valor = '$valor', desconto = '$desconto', categoria_id = '$categoriaId'
-        WHERE id = $id"; //sempre deixar com aspas simples no sql
+        $sql = "UPDATE tbl_produto SET descricao = '$descricao', peso = $peso, quantidade = $quantidade,
+        cor = '$cor', tamanho = '$tamanho', valor = $valor, desconto = $desconto, categoria_id = $categoriaId"; //sempre deixar com aspas simples no sql
         
+        $sql .= isset($novoNomeArquivo) ? ", imagem = '$novoNomeArquivo'" : "";
+
+        //Concatena com o seu valor ja posto ($sql = $sql . "algo")
+        $sql .= " WHERE id = $id";
         
         $resultado = mysqli_query($conexao, $sql);
         // echo "<pre>";
         // var_dump($sql);
         // echo "</pre>"; exit;
+
+        // echo $sql;exit;
 
         header("location: ../");
 

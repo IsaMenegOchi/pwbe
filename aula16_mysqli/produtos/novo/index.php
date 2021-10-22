@@ -27,6 +27,8 @@ $resultado = mysqli_query($conexao, $sql)
 
 <body>
 
+<?php include('../../componentes/header/header.php'); ?>
+
   <div class="content">
 
     <section class="produtos-container">

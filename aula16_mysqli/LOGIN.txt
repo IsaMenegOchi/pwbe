@@ -1,21 +1,5 @@
-<?php
 
-$raiz = "/isabelle/aulaspwbe/aula16_mysqli";
-
-?>
-
-
-<link href="<?= $raiz?>/componentes/header/header.css" rel="stylesheet" />
-
-<header class="header">
-
-    <figure>
-        <a href="<?= $raiz?>/produtos">
-            <img src="<?= $raiz?>/imgs/logo.png" />
-        </a>
-    </figure>
-    
-    <?php
+ <?php
     if (!isset($_SESSION["usuarioId"])) {
     ?>
         <nav>
@@ -27,7 +11,7 @@ $raiz = "/isabelle/aulaspwbe/aula16_mysqli";
             <h1>Fazer Login</h1>
             <form method="POST" action="/componentes/header/acoesLogin.php">
                 <input type="hidden" name="acao" value="login" />
-                <input type="text" name="usuario" placeholder="UsuÃ¡rio" />
+                <input type="text" name="usuario" placeholder="Usuário" />
                 <input type="password" name="senha" placeholder="Senha" />
                 <button>Entrar</button>
             </form>
@@ -46,8 +30,8 @@ $raiz = "/isabelle/aulaspwbe/aula16_mysqli";
     <?php
     }
     ?>
-   
-</header>
+
+########################################################################
 
 <script lang="javascript">
     document.querySelector("#menu-admin").addEventListener("click", toggleLogin);
@@ -66,7 +50,7 @@ $raiz = "/isabelle/aulaspwbe/aula16_mysqli";
             form.style.display = "flex";
             containerLogin.style.opacity = 1;
             containerLogin.style.height = "200px";
-            //se nï¿½o, oculta
+            //se não, oculta
         } else {
             h1Form.style.display = "none";
             form.style.display = "none";
@@ -76,4 +60,3 @@ $raiz = "/isabelle/aulaspwbe/aula16_mysqli";
     }
 
 </script>
-
