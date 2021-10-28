@@ -3,7 +3,12 @@
 
     require_once("../database/conexao.php");
 
-    $sql = "SELECT p.*, c.descricao FROM tbl_produto p INNER JOIN tbl_categoria c ON p.categoria_id = c.id";
+    //?se chamassemos desse jeito, daria conflito entre a descricao produto e descricao categoria, assim o php trocaria por numeros
+    // $sql = "SELECT p.*, c.descricao FROM tbl_produto p INNER JOIN tbl_categoria c ON p.categoria_id = c.id";
+
+    //devemos colocar AS para colocar apelido na descricao de categoria
+    $sql = "SELECT p.*, c.descricao AS nome_categoria FROM tbl_produto p INNER JOIN tbl_categoria c ON p.categoria_id = c.id";
+
 
     $resultado = mysqli_query($conexao, $sql);
 
@@ -91,10 +96,10 @@
                             </em>
                         </span>
 
-                        <span class="descricao"><?= $produto["1"]?></span>
+                        <span class="descricao"><?= $produto["descricao"]?></span>
 
                         <span class="categoria">
-                            <em><?= $produto["descricao"]?></em>
+                            <em><?= $produto["nome_categoria"]?></em>
                         </span>
 
                     </section>
