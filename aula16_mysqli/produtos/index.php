@@ -40,11 +40,18 @@
             <!-- BOTÕES DE INSERÇÃO DE PRODUTOS E CATEGORIAS -->
             <!-- CASO O USUÁRIO ESTEJA LOGADO EXIBE OS BOTÕES DE CADASTRO -->
     
+            <?php
+                if (isset($_SESSION["usuarioId"])) {
+                    
+            
+            ?>
                 <header>
                     <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
                     <button onclick="javascript:window.location.href ='../categorias/'">Adicionar Categoria</button>
                 </header>
 
+
+                <?php } ?>
             <main>
 
                 <!-- LISTAGEM DE PRODUTOS (INICIO) -->
@@ -74,10 +81,15 @@
                 ?>
                 <article class="card-produto">
 
+                <?php if (isset($_SESSION["usuarioId"])) {
+            
+                ?>
                        <div class="acoes-produtos">
                     <img onclick="javascript: window.location = './editar/?id=<?= $produto['id'] ?>'" src="../imgs/edit.svg" />
                     <img onclick="deletar(<?= $produto['id'] ?>)" src="../imgs/trash.svg" />
                     </div>
+
+                    <?php } ?>
     
                     <figure>
                         <img src="fotos/<?= $produto["imagem"]?>" />

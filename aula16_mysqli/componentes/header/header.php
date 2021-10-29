@@ -1,25 +1,28 @@
 <?php
 
+session_start();
+
+
 $raiz = "/isabelle/aulaspwbe/aula16_mysqli";
 
-if(isset($_POST["senha"]) && isset($_POST["usuario"])){
-    $usuarioInserido = $_POST["usuario"];
-    $sqlUsuario = "SELECT usuario FROM tbl_administrador";
-    $usuarioBD = mysqli_query($conexao, $sqlUsuario);
+// if(isset($_POST["senha"]) && isset($_POST["usuario"])){
+//     $usuarioInserido = $_POST["usuario"];
+//     $sqlUsuario = "SELECT usuario FROM tbl_administrador";
+//     $usuarioBD = mysqli_query($conexao, $sqlUsuario);
     
-    $senhaInserida = $_POST["senha"];
-    $sqlSenha = "SELECT senha FROM tbl_administrador";
-    $senhaBD = mysqli_query($conexao, $sqlSenha);
+//     $senhaInserida = $_POST["senha"];
+//     $sqlSenha = "SELECT senha FROM tbl_administrador";
+//     $senhaBD = mysqli_query($conexao, $sqlSenha);
 
-    $respostaSenha = mysqli_fetch_array($senhaBD);
-    $respostaUsuario = mysqli_fetch_array($usuarioBD);
+//     $respostaSenha = mysqli_fetch_array($senhaBD);
+//     $respostaUsuario = mysqli_fetch_array($usuarioBD);
 
-$teste = realizarLogin($usuarioInserido, $senhaInserida, $respostaUsuario, $respostaSenha);
+// $teste = realizarLogin($usuarioInserido, $senhaInserida, $respostaUsuario, $respostaSenha);
 
-echo "<pre>";
-var_dump($teste);
-        echo "</pre>";
- }
+// echo "<pre>";
+// var_dump($teste);
+//         echo "</pre>";
+//  }
 
 
 ?>
@@ -60,7 +63,7 @@ var_dump($teste);
                 <a id="menu-admin" onclick="logout()">Sair</a>
             </ul>
         </nav>
-        <form id="form-logout" style="display:none" method="POST" action="/componentes/header/acoesLogin.php">
+        <form id="form-logout" style="display:none" method="POST" action="<?= $raiz ?>/componentes/header/acoesLogin.php">
             <input type="hidden" name="acao" value="logout" />
         </form>
     <?php
