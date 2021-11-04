@@ -11,14 +11,14 @@ session_start();
 // ! Codigo do prof
 function realizarLogin ($usuario, $senha, $conexao){
 
-    $sql = "SELECT * FROM tbl_administrador WHERE usuario = '$usuario' AND senha = '$senha'";
+    $sql = "SELECT * FROM tbl_administrador WHERE usuario = '$usuario'";
 
     $resultado = mysqli_query($conexao, $sql);
 
     $dadosUsuario = mysqli_fetch_array($resultado);
 
 
-    if(isset($dadosUsuario["usuario"]) && isset($dadosUsuario["senha"]) && password_verify()){
+    if(isset($dadosUsuario["usuario"]) && isset($dadosUsuario["senha"]) && password_verify($senha, $dadosUsuario["senha"])){
         echo "Você está logado";
 
         // Ela quem vai bloquear as coisas de edição e exclusão do site
