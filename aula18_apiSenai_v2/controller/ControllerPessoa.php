@@ -39,11 +39,11 @@
                 break;
 
                 case "PUT";
-                
+                    return $this->_modelPessoa->update();
                 break;
                 
                 case "DELETE":
-                    
+                    return $this->_modelPessoa->delete();
                 
                 break;
                
